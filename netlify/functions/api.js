@@ -12,21 +12,25 @@ exports.handler = async (event) => {
   const repo = process.env.GITHUB_REPO || '';
   const branch = process.env.GITHUB_BRANCH || 'main';
   const token = process.env.GITHUB_TOKEN || '';
+  if (!owner || !repo || !branch || !token) {
+    return { statusCode: 500, headers: cors, body: JSON.stringify({ ok:false, error:'missing_env' }) };
+  }
   const putFile = async (key, contentBase64) => {
     const url = `https://api.github.com/repos/${owner}/${repo}/contents/${key}`;
     let sha = undefined;
     try {
-      const cur = await fetch(`${url}?ref=${branch}`, { headers: { 'Authorization': `Bearer ${token}` } });
+      const cur = await fetch(`${url}?ref=${branch}`, { headers: { 'Authorization': `Bearer ${token}`, 'User-Agent':'netlify-functions', 'Accept':'application/vnd.github+json' } });
       if (cur.ok) { const j = await cur.json(); sha = j.sha; }
     } catch {}
-    const resp = await fetch(url, { method: 'PUT', headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ message: `update ${key}`, content: contentBase64, branch, sha }) });
+    const resp = await fetch(url, { method: 'PUT', headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json', 'User-Agent':'netlify-functions', 'Accept':'application/vnd.github+json' }, body: JSON.stringify({ message: `update ${key}`, content: contentBase64, branch, sha }) });
     if (!resp.ok) { const t = await resp.text(); return { ok: false, error: t }; }
     return { ok: true };
   };
   const json = (obj) => ({ statusCode: 200, headers: { ...cors, 'content-type': 'application/json' }, body: JSON.stringify(obj) });
   const error = (code, msg) => ({ statusCode: code, headers: cors, body: JSON.stringify({ ok: false, error: msg }) });
   try {
-    if (path.includes('/upload-image') && event.httpMethod === 'POST') {
+    const route = path.includes('/.netlify/functions/api') ? path.split('/.netlify/functions/api')[1] : path;
+    if (route.includes('/upload-image') && event.httpMethod === 'POST') {
       const p = JSON.parse(bodyText || '{}');
       const filename = String(p.filename || 'file');
       const data = String(p.data || '');
@@ -44,7 +48,7 @@ exports.handler = async (event) => {
       if (!r.ok) return error(500, r.error || 'upload_failed');
       return json({ ok: true, path: `/${key}` });
     }
-    if (path.includes('/save-hero') && event.httpMethod === 'POST') {
+    if (route.includes('/save-hero') && event.httpMethod === 'POST') {
       const p = JSON.parse(bodyText || '{}');
       const str = JSON.stringify(p, null, 2);
       const content = Buffer.from(str).toString('base64');
@@ -53,7 +57,7 @@ exports.handler = async (event) => {
       if (!r.ok) return error(500, r.error || 'save_failed');
       return json({ ok: true, path: `/${key}` });
     }
-    if (path.includes('/save-categories') && event.httpMethod === 'POST') {
+    if (route.includes('/save-categories') && event.httpMethod === 'POST') {
       const p = JSON.parse(bodyText || '[]');
       const str = JSON.stringify(Array.isArray(p) ? p : [], null, 2);
       const content = Buffer.from(str).toString('base64');
@@ -62,7 +66,7 @@ exports.handler = async (event) => {
       if (!r.ok) return error(500, r.error || 'save_failed');
       return json({ ok: true, path: `/${key}` });
     }
-    if (path.includes('/save-governorates') && event.httpMethod === 'POST') {
+    if (route.includes('/save-governorates') && event.httpMethod === 'POST') {
       const p = JSON.parse(bodyText || '[]');
       const str = JSON.stringify(Array.isArray(p) ? p : [], null, 2);
       const content = Buffer.from(str).toString('base64');
@@ -71,7 +75,7 @@ exports.handler = async (event) => {
       if (!r.ok) return error(500, r.error || 'save_failed');
       return json({ ok: true, path: `/${key}` });
     }
-    if (path.includes('/save-menu') && event.httpMethod === 'POST') {
+    if (route.includes('/save-menu') && event.httpMethod === 'POST') {
       const p = JSON.parse(bodyText || '[]');
       const str = JSON.stringify(Array.isArray(p) ? p : [], null, 2);
       const content = Buffer.from(str).toString('base64');
