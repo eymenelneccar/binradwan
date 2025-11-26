@@ -197,10 +197,10 @@
       try {
         const resp = await fetch(SAVE_HERO_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', ...apiAuthHeader() }, body: JSON.stringify(payload) });
         const json = await resp.json().catch(() => ({}));
-        if (!resp.ok || !json.ok) throw new Error(json.error || 'تعذّر حفظ الهيرو');
+        if (!resp.ok || !json.ok) throw new Error(json.error || String(resp.status));
         if (els.btnSaveHero) els.btnSaveHero.textContent = 'تم الحفظ ✓';
-      } catch {
-        if (els.btnSaveHero) els.btnSaveHero.textContent = 'فشل الحفظ';
+      } catch (e) {
+        if (els.btnSaveHero) els.btnSaveHero.textContent = 'فشل الحفظ' + (e && e.message ? ': ' + e.message : '');
       } finally {
         setTimeout(() => { if (els.btnSaveHero) { els.btnSaveHero.textContent = originalText || 'حفظ الهيرو'; els.btnSaveHero.disabled = false; } }, 1500);
       }

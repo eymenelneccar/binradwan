@@ -3,8 +3,9 @@ exports.handler = async (event) => {
   if (event.httpMethod === 'OPTIONS') return { statusCode: 200, headers: cors };
   const path = event.path || '';
   const secret = process.env.API_SECRET || '';
+  const disableAuth = String(process.env.DISABLE_AUTH || '').toLowerCase() === 'true';
   const routeEarly = path.includes('/.netlify/functions/api') ? path.split('/.netlify/functions/api')[1] : path;
-  if (secret && !(routeEarly.includes('/config') && event.httpMethod === 'GET')) {
+  if (!disableAuth && secret && !(routeEarly.includes('/config') && event.httpMethod === 'GET')) {
     const auth = event.headers['authorization'] || event.headers['Authorization'] || '';
     if (auth !== `Bearer ${secret}`) return { statusCode: 401, headers: cors, body: JSON.stringify({ ok: false, error: 'unauthorized' }) };
   }
@@ -14,7 +15,7 @@ exports.handler = async (event) => {
   const branch = process.env.GITHUB_BRANCH || 'main';
   const token = process.env.GITHUB_TOKEN || '';
   if (!owner || !repo || !branch || !token) {
-    return { statusCode: 500, headers: cors, body: JSON.stringify({ ok:false, error:'missing_env' }) };
+    return { statusCode: 500, headers: cors, body: JSON.stringify({ ok:false, error:'missing_env', owner: !!owner, repo: !!repo, branch: !!branch, token: !!token }) };
   }
   const putFile = async (key, contentBase64) => {
     const url = `https://api.github.com/repos/${owner}/${repo}/contents/${key}`;
