@@ -16,7 +16,7 @@
     <link rel="preload" as="image" href="LOGO.png" fetchpriority="high">
 
     <style>
-        :root { --accent:#FFC107; --accent2:#E91E63; --bg:#0a0a0a; --card:#141414; --text:#ffffff; }
+        :root { --accent:#7A1F1F; --accent2:#5A0F0F; --bg:#ffffff; --card:#ffffff; --text:#111827; }
         @font-face {
             font-family: 'MSjawhara';
             src: url('MSjawhara-Bold.ttf') format('truetype');
@@ -26,8 +26,8 @@
         }
         body {
             font-family: 'Cairo', 'MSjawhara', sans-serif;
-            background-color: #0a0a0a;
-            color: white;
+            background-color: #ffffff;
+            color: #111827;
         }
 
         /* Hide Scrollbar */
@@ -48,6 +48,7 @@
         .product-card { display:flex; flex-direction:column; height:100%; }
         .card-content { display:flex; flex-direction:column; gap:.5rem; flex: 1 1 auto; }
         .line-2 { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient: vertical; overflow:hidden; }
+        .menu-font { font-family: 'MSjawhara', 'Cairo', sans-serif; }
         #cart-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 90; display: none; }
         #cart-panel { position: fixed; top: 0; right: 0; width: 100%; max-width: 400px; height: 100%; background: #ffffff; color: #111827; box-shadow: -8px 0 24px rgba(0,0,0,.25); transform: translateX(100%); transition: transform .25s ease; z-index: 100; display:flex; flex-direction:column; }
         #cart-panel.open { transform: translateX(0); }
@@ -66,12 +67,22 @@
         .qty-btn { width:28px; height:28px; display:inline-flex; align-items:center; justify-content:center; border-radius:8px; border:1px solid #e5e7eb; background:#fff; color:#111827; font-weight:900; transition: background .2s ease; }
         .qty-btn:hover { background:#f3f4f6; }
         .qty-val { min-width:24px; text-align:center; font-weight:800; }
+        #hero-overlay { position:absolute; left:0; right:0; bottom:0; height: var(--hero-overlay-height, 46%); background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.92) 25%, rgba(255,255,255,0.75) 55%, rgba(255,255,255,0.3) 85%, rgba(255,255,255,0) 100%); }
+        #preview-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 95; display: none; }
+        #preview-panel { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 92vw; max-width: 520px; background: #fff; color: #111827; border:1px solid #e5e7eb; border-radius: 16px; box-shadow: 0 16px 40px rgba(0,0,0,.25); z-index: 96; display: none; overflow: hidden; }
+        .preview-image { width: 100%; height: 220px; object-fit: cover; }
+        .preview-body { padding: 14px; display: grid; gap: 8px; }
+        .preview-title { font-weight: 900; font-size: 1.15rem; }
+        .preview-price { display:flex; align-items:center; gap:6px; }
+        .preview-price .val { color:#7A1F1F; font-weight:900; font-size:1.6rem; line-height:1; }
+        .preview-price .cur { color:#111827; font-size:1rem; line-height:1; }
+        .preview-actions { display:grid; gap:8px; padding: 0 14px 14px; }
         .cart-total { display:flex; align-items:center; justify-content: space-between; padding: .75rem 1.25rem; font-weight:800; }
         .cart-form { padding: .5rem 1.25rem 1rem; display: grid; gap: .5rem; }
         .cart-input { width:100%; background:#fff; border:1px solid #d1d5db; border-radius: 12px; padding: .5rem .75rem; font-size:.9rem; }
         .cart-actions { padding: .75rem 1.25rem 1rem; display:grid; gap:.5rem; }
-        .btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent2)); color:#111827; border:0; border-radius:12px; padding:.6rem .75rem; font-weight:800; text-align:center; box-shadow: 0 0 14px rgba(255,193,7,.25); }
-        .btn-primary:hover { filter: brightness(1.06); }
+        .btn-primary { background:#ffffff; color:#7A1F1F; border:1px solid #7A1F1F; border-radius:12px; padding:.6rem .75rem; font-weight:800; text-align:center; box-shadow: 0 6px 16px rgba(0,0,0,.08); }
+        .btn-primary:hover { background:#f9fafb; }
         .btn-secondary { background:#0f0f0f; color:#fff; border:1px solid #262626; border-radius:12px; padding:.6rem .75rem; font-weight:800; text-align:center; }
         @media (max-width:640px){ .cart-item{ grid-template-columns: 56px 1fr; } .cart-thumb{ width:56px; height:56px; } .thumb-wrap{ width:56px; height:56px; } .thumb-fallback{ width:56px; height:56px; } }
 
@@ -80,7 +91,7 @@
         .splash-inner { text-align: center; }
         .splash-logo { width: clamp(96px, 28vw, 160px); height: auto; display:block; margin: 0 auto 10px; filter: drop-shadow(0 8px 24px rgba(255,193,7,.15)); }
         .splash-brand { font-weight: 900; font-size: clamp(28px, 6vw, 44px); color: #fff; letter-spacing: -0.5px; }
-        .splash-brand .accent { color: var(--accent); text-shadow: 0 0 14px rgba(255,193,7,.25); }
+        .splash-brand .accent { color: #FFA500; text-shadow: 0 0 14px rgba(255,165,0,.25); }
         .splash-spinner { width: 32px; height: 32px; border-radius: 50%; border: 3px solid #222; border-top-color: var(--accent); margin: 14px auto 0; animation: spin 0.8s linear infinite; }
         @keyframes spin { to { transform: rotate(360deg); } }
     </style>
@@ -100,8 +111,8 @@
         <div class="container mx-auto px-4">
             <div class="relative flex items-center justify-center">
                 <div class="flex items-center gap-1 whitespace-nowrap" dir="ltr">
-                    <span class="text-2xl font-black tracking-tighter text-white">Graffiti</span>
-                    <span class="text-2xl font-black tracking-tighter text-[#FFC107]">Burger</span>
+                    <span id="brand-graffiti" class="text-2xl font-black tracking-tighter text-white">Graffiti</span>
+                    <span class="text-2xl font-black tracking-tighter text-[#FFA500]">Burger</span>
                 </div>
             </div>
         </div>
@@ -114,20 +125,20 @@
             <img id="hero-img" src="" 
                  alt="" 
                  class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent"></div>
+            <div id="hero-overlay"></div>
         </div>
 
         <!-- Content -->
         <div class="relative z-10 h-full flex flex-col justify-end items-center text-center px-4 pb-12">
             <h1 id="hero-title" class="text-2xl md:text-4xl font-black mb-1 leading-tight">
-                من أول لقمة… تعرف إن الموضوع مو <span class="text-[#FFC107]">صدفة</span>
+                من أول لقمة… تعرف إن الموضوع مو <span class="text-[#7A1F1F]">صدفة</span>
             </h1>
             
         </div>
     </div>
 
     <!-- Categories Section -->
-    <div id="categories-sticky" class="sticky z-40 bg-gradient-to-b from-transparent via-[#0a0a0a]/80 to-[#0a0a0a] pt-0 pb-2 mb-0">
+    <div id="categories-sticky" class="sticky z-40 bg-white pt-0 pb-2 mb-0">
         <div class="container mx-auto px-4 overflow-x-auto hide-scrollbar">
             <div id="categories-container" class="flex justify-center gap-4 min-w-max pb-2 pt-2">
                 <!-- Categories will be injected here via JS -->
@@ -144,10 +155,10 @@
     </div>
 
     <!-- Fixed Footer -->
-    <footer class="fixed bottom-0 left-0 right-0 bg-black/95 backdrop-blur border-t border-gray-900 py-2 z-40">
+    <footer class="fixed bottom-0 left-0 right-0 bg-white backdrop-blur border-t border-gray-200 py-2 z-40">
         <div class="container mx-auto px-4 text-center">
             <p class="text-gray-500 font-medium text-[11px] mb-0.5">
-                © 2025 جميع الحقوق محفوظة لصالح <span class="text-[#FFC107] font-bold">Graffiti Burger</span>
+                © 2025 جميع الحقوق محفوظة لصالح <span class="text-[#FFA500] font-bold">Graffiti Burger</span>
             </p>
             <p class="text-gray-600 text-[10px] font-light tracking-wide" dir="ltr">
                 powered by <span class="text-gray-400 font-bold hover:text-white transition-colors cursor-default">IQR MENU</span>
@@ -157,9 +168,9 @@
 
     <!-- Floating Cart Button -->
     <div class="fixed bottom-24 left-6 z-50">
-        <button onclick="openCart()" class="w-16 h-16 bg-[#FFC107] rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(255,193,7,0.4)] hover:scale-110 transition-transform relative">
-            <i data-lucide="shopping-cart" class="text-black w-6 h-6"></i>
-            <span id="cart-badge" class="hidden absolute -top-1 -right-1 bg-[#E91E63] text-white text-xs font-bold w-6 h-6 flex items-center justify-center rounded-full border-2 border-[#0a0a0a]">
+        <button onclick="openCart()" class="w-16 h-16 bg-[#7A1F1F] rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(122,31,31,0.4)] hover:scale-110 transition-transform relative">
+            <i data-lucide="shopping-cart" class="text-white w-6 h-6"></i>
+            <span id="cart-badge" class="hidden absolute -top-1 -right-1 bg-[#E91E63] text-white text-xs font-bold w-6 h-6 flex items-center justify-center rounded-full border-2 border-white">
                 0
             </span>
         </button>
@@ -174,6 +185,20 @@
         </div>
         <div class="cart-divider"></div>
         <div id="cart-content"></div>
+    </div>
+
+    <div id="preview-overlay" onclick="closePreview()"></div>
+    <div id="preview-panel" role="dialog" aria-modal="true">
+        <img id="preview-img" class="preview-image" src="" alt="">
+        <div class="preview-body">
+            <div id="preview-title" class="preview-title"></div>
+            <div class="preview-price"><span id="preview-price" class="val"></span><span class="cur">د.ع</span></div>
+            <div id="preview-desc" class="text-sm text-gray-600"></div>
+        </div>
+        <div class="preview-actions">
+            <button id="preview-add" class="mt-auto w-full bg-[#7A1F1F] hover:bg-[#681919] text-white py-2 rounded-xl font-bold flex items-center justify-center gap-2 transition-colors border border-[#7A1F1F] text-sm cursor-pointer">أضف</button>
+            <button onclick="closePreview()" class="w-full bg-white text-[#111827] border border-gray-300 rounded-xl py-2 font-bold">إغلاق</button>
+        </div>
     </div>
 
     <!-- JavaScript Logic -->
@@ -351,7 +376,7 @@
                 const h1 = document.getElementById('hero-title');
                 if (h1 && data && typeof data.title === 'string' && data.title.trim().length > 0) {
                     const t = String(data.title);
-                    h1.innerHTML = t.replace(/صدفة/g, '<span class="text-[#FFC107]">صدفة</span>');
+                    h1.innerHTML = t.replace(/صدفة/g, '<span class="text-[#7A1F1F]">صدفة</span>');
                 }
             } catch {}
         }
@@ -377,17 +402,22 @@
             };
             updateCategoriesOffset();
             window.addEventListener('resize', updateCategoriesOffset);
-            window.addEventListener('scroll', () => {
+            const updateHeaderStyle = () => {
                 const header = document.getElementById('main-header');
+                const brand = document.getElementById('brand-graffiti');
                 if (window.scrollY > 50) {
                     header.classList.remove('bg-transparent', 'py-5');
-                    header.classList.add('bg-black/90', 'backdrop-blur-md', 'py-3', 'shadow-lg');
+                    header.classList.add('bg-white/90', 'backdrop-blur-md', 'py-3', 'shadow-lg', 'border-b', 'border-gray-200');
+                    if (brand) { brand.classList.remove('text-white'); brand.classList.add('text-[#111827]'); }
                 } else {
                     header.classList.add('bg-transparent', 'py-5');
-                    header.classList.remove('bg-black/90', 'backdrop-blur-md', 'py-3', 'shadow-lg');
+                    header.classList.remove('bg-white/90', 'backdrop-blur-md', 'py-3', 'shadow-lg', 'border-b', 'border-gray-200');
+                    if (brand) { brand.classList.add('text-white'); brand.classList.remove('text-[#111827]'); }
                 }
                 updateCategoriesOffset();
-            });
+            };
+            window.addEventListener('scroll', updateHeaderStyle);
+            updateHeaderStyle();
         });
 
         // Functions
@@ -396,11 +426,11 @@
             const cats = APP.categories;
             container.innerHTML = cats.map(name => {
                 const isActive = activeCategory === name;
-                const activeClasses = 'bg-[#FFC107] text-black border-[#FFC107] shadow-[0_0_15px_rgba(255,193,7,0.3)] scale-105';
-                const inactiveClasses = 'bg-black/60 text-gray-300 border-gray-700 hover:border-gray-500 hover:bg-black/80';
+                const activeClasses = 'bg-[#7A1F1F] text-white border-[#7A1F1F] shadow-[0_0_15px_rgba(122,31,31,0.25)] scale-105';
+                const inactiveClasses = 'bg-white text-gray-700 border-gray-300 hover:border-gray-400 hover:bg-gray-50';
                 return `
                     <button onclick="setCategory('${name}')" 
-                        class="relative px-8 py-2 md:py-3 rounded-lg font-bold transition-all duration-300 transform -skew-x-12 border backdrop-blur-md ${isActive ? activeClasses : inactiveClasses}">
+                        class="relative px-8 py-2 md:py-3 rounded-lg font-bold transition-all duration-300 transform -skew-x-12 border backdrop-blur-md menu-font ${isActive ? activeClasses : inactiveClasses}">
                         <span class="block transform skew-x-12 text-lg">${name}</span>
                     </button>
                 `;
@@ -418,31 +448,33 @@
             const grid = document.getElementById('products-grid');
             const items = activeCategory === 'الكل' ? APP.items : APP.items.filter(p => p.category === activeCategory);
             grid.innerHTML = items.map(item => `
-                <div class="product-card bg-[#141414] rounded-3xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all duration-300 group">
+                <div class="product-card bg:white rounded-3xl overflow-hidden border border-gray-200 hover:border-gray-300 transition-all duration-300 group" onclick="openPreview(${item.id})">
                     <div class="relative h-40 md:h-64 overflow-hidden">
-                        <img src="${item.image || ''}" alt="${item.title}" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" onerror="this.style.display='none'" loading="lazy">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#141414] to-transparent opacity-80"></div>
-                        <div class="absolute bottom-2 right-2 bg-black/90 backdrop-blur px-2 py-1 rounded-lg border border-gray-800">
-                            <span class="text-[#FFC107] font-black text-sm md:text-xl">${Number(item.price||0).toLocaleString('ar-IQ')}</span>
-                            <span class="text-white text-[10px] md:text-xs mr-1">د.ع</span>
-                        </div>
+                        <img src="${item.image || ''}" alt="${item.title}" class="w-full h-full object-cover" onerror="this.style.display='none'" loading="lazy">
+                        
                         ${item.isNew ? `
                         <div class="absolute top-2 right-2 bg-[#E91E63] text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded-full shadow-lg">
                             جديد
                         </div>` : ''}
                     </div>
-                    <div class="card-content p-4 md:p-6 relative -mt-4 md:-mt-6 bg-[#141414] rounded-t-3xl">
-                        <h3 class="text-lg md:text-2xl font-black text-white leading-tight mb-1 md:mb-2">${item.title}</h3>
-                        <h4 class="text-[#E91E63] text-[10px] md:text-xs font-bold tracking-widest uppercase mb-2 md:mb-4 opacity-90 truncate">${item.englishTitle || ''}</h4>
-                        <p class="text-gray-400 text-xs md:text-sm leading-relaxed mb-4 font-medium line-2">${item.description || ''}</p>
-                        <button onclick="addToCart(${item.id})" class="mt-auto w-full bg-[#1a1a1a] hover:bg-[#252525] text-white py-2 md:py-4 rounded-xl font-bold flex items-center justify-center gap-2 group transition-colors border border-gray-800 text-sm md:text-base cursor-pointer">
+                    <div class="card-content p-3 md:p-4 relative mt-0 bg:white rounded-t-3xl menu-font">
+                        <h3 class="text-base md:text-xl font-black text-[#111827] leading-tight mb-1 md:mb-2">${item.title}</h3>
+                        <div class="flex items-center gap-1 mb-2">
+                            <span class="text-[#7A1F1F] font-black text-xl md:text-3xl leading-none">${Number(item.price||0).toLocaleString('ar-IQ')}</span>
+                            <span class="text-[#111827] text-sm md:text-lg mr-1 leading-none">د.ع</span>
+                        </div>
+                        <p class="text-gray-600 text-xs md:text-sm leading-relaxed mb-4 font-medium line-2">${item.description || ''}</p>
+                        <button onclick="event.stopPropagation(); addToCart(${item.id})" class="mt-auto w-full bg-[#7A1F1F] hover:bg-[#681919] text-white py-2 md:py-3 rounded-xl font-bold flex items-center justify-center gap-2 group transition-colors border border-[#7A1F1F] text-sm md:text-base cursor:pointer menu-font">
                             <span>أضف</span>
-                            <i data-lucide="plus" class="text-[#FFC107] w-4 h-4 group-hover:rotate-90 transition-transform"></i>
+                            <i data-lucide="plus" class="text:white w-4 h-4 group-hover:rotate-90 transition-transform"></i>
                         </button>
                     </div>
                 </div>
             `).join('');
         }
+
+        function openPreview(id){ const item = APP.items.find(i=>i.id===id); if(!item) return; const pImg=document.getElementById('preview-img'); const pTitle=document.getElementById('preview-title'); const pDesc=document.getElementById('preview-desc'); const pPrice=document.getElementById('preview-price'); const overlay=document.getElementById('preview-overlay'); const panel=document.getElementById('preview-panel'); if(pImg) pImg.src = item.image || ''; if(pTitle) pTitle.textContent = item.title || ''; if(pDesc) pDesc.textContent = item.description || ''; if(pPrice) pPrice.textContent = Number(item.price||0).toLocaleString('ar-IQ'); const add=document.getElementById('preview-add'); if(add){ add.onclick = function(ev){ ev.stopPropagation(); addToCart(item.id); closePreview(); }; } if(overlay) overlay.style.display='block'; if(panel) panel.style.display='block'; }
+        function closePreview(){ const overlay=document.getElementById('preview-overlay'); const panel=document.getElementById('preview-panel'); if(overlay) overlay.style.display='none'; if(panel) panel.style.display='none'; }
 
         function addToCart(id) {
             const item = APP.items.find(i => i.id === id);

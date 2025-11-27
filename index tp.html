@@ -15,11 +15,9 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: #0a0a0a;
-            color: white;
-        }
+        @font-face { font-family: 'MSjawhara'; src: url('MSjawhara-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+        body { font-family: 'Cairo', sans-serif; background-color: #ffffff; color: #111827; }
+        .menu-font { font-family: 'MSjawhara', 'Cairo', sans-serif; }
 
         /* Hide Scrollbar */
         .hide-scrollbar::-webkit-scrollbar {
@@ -31,9 +29,7 @@
         }
 
         /* Custom Neon Text Shadow */
-        .neon-text {
-            text-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
-        }
+        .neon-text { text-shadow: 0 0 10px rgba(255, 193, 7, 0.5); }
     </style>
 </head>
 <body class="pb-40">
@@ -42,8 +38,8 @@
     <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-5 bg-transparent">
         <div class="container mx-auto px-4 flex justify-center items-center">
             <div class="flex items-center gap-1">
-                <span class="text-2xl font-black tracking-tighter text-white">CRAFTY</span>
-                <span class="text-2xl font-black tracking-tighter text-[#FFC107]">BURGER</span>
+                <span class="text-2xl font-black tracking-tighter text-[#111827]">CRAFTY</span>
+                <span class="text-2xl font-black tracking-tighter text-[#FFA500]">BURGER</span>
             </div>
         </div>
     </header>
@@ -55,9 +51,22 @@
             <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=2070&auto=format&fit=crop" 
                  alt="Neon Restaurant Interior" 
                  class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent"></div>
-        </div>
+            
+</div>
 
+    <div id="preview-overlay" onclick="closePreview()" style="position:fixed; inset:0; background:rgba(0,0,0,.6); z-index:95; display:none;"></div>
+    <div id="preview-panel" role="dialog" aria-modal="true" style="position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); width:92vw; max-width:520px; background:#fff; color:#111827; border:1px solid #e5e7eb; border-radius:16px; box-shadow:0 16px 40px rgba(0,0,0,.25); z-index:96; display:none; overflow:hidden;">
+        <img id="preview-img" src="" alt="" style="width:100%; height:220px; object-fit:cover;">
+        <div style="padding:14px; display:grid; gap:8px;">
+            <div id="preview-title" style="font-weight:900; font-size:1.15rem;"></div>
+            <div style="display:flex; align-items:center; gap:6px;"><span id="preview-price" style="color:#7A1F1F; font-weight:900; font-size:1.6rem; line-height:1;"></span><span style="color:#111827; font-size:1rem; line-height:1;">د.ع</span></div>
+            <div id="preview-desc" style="font-size:.9rem; color:#4b5563;"></div>
+        </div>
+        <div style="display:grid; gap:8px; padding:0 14px 14px;">
+            <button id="preview-add" class="w-full bg-[#7A1F1F] hover:bg-[#681919] text-white py-2 rounded-xl font-bold flex items-center justify-center gap-2 transition-colors border border-[#7A1F1F] text-sm cursor-pointer">أضف</button>
+            <button onclick="closePreview()" class="w-full bg-white text-[#111827] border border-gray-300 rounded-xl py-2 font-bold">إغلاق</button>
+        </div>
+    </div>
         <!-- Content -->
         <div class="relative z-10 h-full flex flex-col justify-end items-center text-center px-4 pb-12">
             <h1 class="text-3xl md:text-5xl font-black mb-2 leading-tight">
@@ -67,7 +76,7 @@
     </div>
 
     <!-- Categories Section -->
-    <div class="sticky top-20 z-40 bg-gradient-to-b from-transparent via-[#0a0a0a]/80 to-[#0a0a0a] pt-2 pb-4 mb-4 -mt-8">
+    <div class="sticky top-20 z-40 bg-white pt-2 pb-4 mb-4 -mt-8">
         <div class="container mx-auto px-4 overflow-x-auto hide-scrollbar">
             <div id="categories-container" class="flex justify-center gap-4 min-w-max pb-2 pt-2">
                 <!-- Categories will be injected here via JS -->
@@ -87,7 +96,7 @@
     <footer class="fixed bottom-0 left-0 right-0 bg-black/95 backdrop-blur border-t border-gray-900 py-4 z-40">
         <div class="container mx-auto px-4 text-center">
             <p class="text-gray-400 font-medium text-sm mb-1">
-                © 2025 جميع الحقوق محفوظة لصالح <span class="text-[#FFC107] font-bold">Graffiti Burger</span>
+                © 2025 جميع الحقوق محفوظة لصالح <span class="text-[#FFA500] font-bold">Graffiti Burger</span>
             </p>
             <p class="text-gray-600 text-xs font-light tracking-wide" dir="ltr">
                 powered by <span class="text-gray-500 font-bold hover:text-white transition-colors cursor-default">IQR .LTD</span>
@@ -186,12 +195,12 @@
             const container = document.getElementById('categories-container');
             container.innerHTML = categories.map(cat => {
                 const isActive = activeCategory === cat.name;
-                const activeClasses = 'bg-[#FFC107] text-black border-[#FFC107] shadow-[0_0_15px_rgba(255,193,7,0.3)] scale-105';
-                const inactiveClasses = 'bg-black/60 text-gray-300 border-gray-700 hover:border-gray-500 hover:bg-black/80';
+                const activeClasses = 'bg-[#7A1F1F] text-white border-[#7A1F1F] shadow-[0_0_15px_rgba(122,31,31,0.25)] scale-105';
+                const inactiveClasses = 'bg-white text-gray-700 border-gray-300 hover:border-gray-400 hover:bg-gray-50';
                 
                 return `
                     <button onclick="setCategory('${cat.name}')" 
-                        class="relative px-8 py-2 md:py-3 rounded-lg font-bold transition-all duration-300 transform -skew-x-12 border backdrop-blur-md ${isActive ? activeClasses : inactiveClasses}">
+                        class="relative px-8 py-2 md:py-3 rounded-lg font-bold transition-all duration-300 transform -skew-x-12 border backdrop-blur-md menu-font ${isActive ? activeClasses : inactiveClasses}">
                         <span class="block transform skew-x-12 text-lg">${cat.name}</span>
                     </button>
                 `;
@@ -210,17 +219,13 @@
             const filtered = activeCategory === 'الكل' ? products : products.filter(p => p.category === activeCategory);
             
             grid.innerHTML = filtered.map(item => `
-                <div class="bg-[#141414] rounded-3xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all duration-300 group">
+                <div class="bg-[#141414] rounded-3xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all duration-300 group" onclick="openPreview(${item.id})">
                     <!-- Image Area -->
                     <div class="relative h-40 md:h-64 overflow-hidden">
-                        <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#141414] to-transparent opacity-80"></div>
+                        <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover">
                         
-                        <!-- Price -->
-                        <div class="absolute bottom-2 right-2 bg-black/90 backdrop-blur px-2 py-1 rounded-lg border border-gray-800">
-                            <span class="text-[#FFC107] font-black text-sm md:text-xl">${item.price.toLocaleString()}</span>
-                            <span class="text-white text-[10px] md:text-xs mr-1">د.ع</span>
-                        </div>
+                        
+                        
 
                         ${item.isNew ? `
                         <div class="absolute top-2 right-2 bg-[#E91E63] text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded-full shadow-lg">
@@ -229,12 +234,14 @@
                     </div>
 
                     <!-- Content Area -->
-                    <div class="p-4 md:p-6 relative -mt-4 md:-mt-6 bg-[#141414] rounded-t-3xl">
-                        <h3 class="text-lg md:text-2xl font-black text-white leading-tight mb-1 md:mb-2">${item.title}</h3>
-                        <h4 class="text-[#E91E63] text-[10px] md:text-xs font-bold tracking-widest uppercase mb-2 md:mb-4 opacity-90 truncate">${item.englishTitle}</h4>
-                        <p class="text-gray-400 text-xs md:text-sm leading-relaxed mb-4 md:mb-6 font-medium line-clamp-2 md:line-clamp-none">${item.description}</p>
-                        
-                        <button onclick="addToCart()" class="w-full bg-[#1a1a1a] hover:bg-[#252525] text-white py-2 md:py-4 rounded-xl font-bold flex items-center justify-center gap-2 group transition-colors border border-gray-800 text-sm md:text-base cursor-pointer">
+                    <div class="p-3 md:p-4 relative mt-0 bg-[#141414] rounded-t-3xl menu-font">
+                        <h3 class="text-base md:text-xl font-black text-white leading-tight mb-1 md:mb-2">${item.title}</h3>
+                        <div class="flex items-center gap-1 mb-2">
+                            <span class="text-[#7A1F1F] font-black text-xl md:text-3xl leading-none">${item.price.toLocaleString()}</span>
+                            <span class="text-[#111827] text-sm md:text-lg mr-1 leading-none">د.ع</span>
+                        </div>
+                        <p class="text-gray-600 text-xs md:text-sm leading-relaxed mb-4 font-medium">${item.description}</p>
+                        <button onclick="event.stopPropagation(); addToCart()" class="w-full bg-[#1a1a1a] hover:bg-[#252525] text-white py-2 md:py-3 rounded-xl font-bold flex items-center justify-center gap-2 group transition-colors border border-gray-800 text-sm md:text-base cursor-pointer">
                             <span>أضف</span>
                             <i data-lucide="plus" class="text-[#FFC107] w-4 h-4 group-hover:rotate-90 transition-transform"></i>
                         </button>
@@ -242,6 +249,9 @@
                 </div>
             `).join('');
         }
+
+        function openPreview(id){ const item = products.find(i=>i.id===id); if(!item) return; const overlay = document.getElementById('preview-overlay'); const panel = document.getElementById('preview-panel'); const pImg=document.getElementById('preview-img'); const pTitle=document.getElementById('preview-title'); const pDesc=document.getElementById('preview-desc'); const pPrice=document.getElementById('preview-price'); if(pImg) pImg.src = item.image || ''; if(pTitle) pTitle.textContent = item.title || ''; if(pDesc) pDesc.textContent = item.description || ''; if(pPrice) pPrice.textContent = (item.price||0).toLocaleString(); const add=document.getElementById('preview-add'); if(add){ add.onclick = function(ev){ ev.stopPropagation(); addToCart(); closePreview(); }; } if(overlay) overlay.style.display='block'; if(panel) panel.style.display='block'; }
+        function closePreview(){ const overlay=document.getElementById('preview-overlay'); const panel=document.getElementById('preview-panel'); if(overlay) overlay.style.display='none'; if(panel) panel.style.display='none'; }
 
         function addToCart() {
             cartCount++;
