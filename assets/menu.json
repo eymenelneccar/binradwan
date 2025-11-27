@@ -6,5 +6,21 @@
     "price": 10000,
     "imageUrl": "assets/images/500.jpg",
     "description": ""
+  },
+  {
+    "id": 1764240670518,
+    "name": "hdlkldvd",
+    "category": "ايمن",
+    "price": 88787,
+    "imageUrl": "assets/images/Screenshot_2025-10-17_100536.png",
+    "description": ""
+  },
+  {
+    "id": 1764240713329,
+    "name": "قهوة تركية",
+    "category": "ايمن",
+    "price": 78278,
+    "imageUrl": "assets/images/Screenshot_2025-10-18_134308.png",
+    "description": "غغتغفتغفتغ غفت غتغفت"
   }
 ]
