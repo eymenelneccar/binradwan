@@ -424,7 +424,7 @@ wb);O(IMG_SEARCH_ATTRIBUTION_MAP,Pd);O(IMG_GEN_REPLACE_MAP,fa.A);X();jf();h.A=0}
         <div id="homeHeroCard" class="relative h-72 rounded-[2.5rem] overflow-hidden shadow-gold-glow border-4 border-white group bg-gray-100" style="transform:translateZ(0); will-change:transform; contain:paint;">
             
             <!-- Hero Media -->
-            <img id="homeHeroImg" alt="Luxury Cafe View" class="w-full h-full object-cover brightness-95" style="transition:transform 600ms ease; will-change:transform; transform:translateZ(0); backface-visibility:hidden;" src="assets/images/500.jpg">
+            <img id="homeHeroImg" alt="Luxury Cafe View" class="w-full h-full object-cover brightness-95" style="display:none; transition:transform 600ms ease; will-change:transform; transform:translateZ(0); backface-visibility:hidden;" src="">
             <video id="homeHeroVideo" class="w-full h-full object-cover brightness-95" style="display:none; transition:transform 600ms ease; will-change:transform; transform:translateZ(0); backface-visibility:hidden;" playsinline muted loop></video>
             
             <!-- Elegant Overlay -->
@@ -432,13 +432,7 @@ wb);O(IMG_SEARCH_ATTRIBUTION_MAP,Pd);O(IMG_GEN_REPLACE_MAP,fa.A);X();jf();h.A=0}
             
             <!-- Content -->
             <div class="absolute bottom-0 left-0 right-0 p-6 flex flex-col items-start justify-end h-full text-right shimmer">
-                <div class="bg-white/10 backdrop-blur-md border border-white/20 px-4 py-1.5 rounded-full mb-3 self-end">
-                    <span class="text-brand-gold-light text-xs font-bold tracking-widest uppercase">Premium Lounge</span>
-                </div>
-                <h2 id="homeHeroTitle" class="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-2 w-full text-right">
-                    تجربة لا تُنسى<br>
-                    <span class="text-brand-gold font-serif italic">في كل تفصيل</span>
-                </h2>
+                <h2 id="homeHeroTitle" class="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-2 w-full text-right"></h2>
                 <div class="text-gray-200 text-sm font-light opacity-90 w-full flex items-center gap-2 justify-start text-right">
                   <span>أجود أنواع القهوة • أفخم الأراكيل</span>
                   <a href="https://www.instagram.com/bin_.radwan/" target="_blank" rel="noopener noreferrer" aria-label="فتح إنستغرام" class="inline-flex items-center text-gray-200 hover:opacity-80 transition-opacity">
@@ -463,37 +457,12 @@ wb);O(IMG_SEARCH_ATTRIBUTION_MAP,Pd);O(IMG_GEN_REPLACE_MAP,fa.A);X();jf();h.A=0}
 
     <!-- Categories Navigation -->
     <div class="sticky top-[60px] z-30 bg-bg-main/95 backdrop-blur pt-2 pb-4 border-b border-gray-100/50">
-        <div class="flex overflow-x-auto no-scrollbar px-4 gap-3" id="categories-container">
-                <button onclick="setCategory('coffee')" class="flex flex-col items-center justify-center min-w-[4.5rem] py-3 rounded-2xl transition-all duration-300 gap-1 border category-active border-brand-green">
-                    <span class="material-symbols-outlined text-2xl mb-1">coffee</span>
-                    <span class="text-[10px] font-bold tracking-wide">القهوة المختصة</span>
-                </button>
-            
-                <button onclick="setCategory('cold')" class="flex flex-col items-center justify-center min-w-[4.5rem] py-3 rounded-2xl transition-all duration-300 gap-1 border category-inactive border-transparent bg-gray-50">
-                    <span class="material-symbols-outlined text-2xl mb-1">ac_unit</span>
-                    <span class="text-[10px] font-bold tracking-wide">الباردة</span>
-                </button>
-            
-                <button onclick="setCategory('sweets')" class="flex flex-col items-center justify-center min-w-[4.5rem] py-3 rounded-2xl transition-all duration-300 gap-1 border category-inactive border-transparent bg-gray-50">
-                    <span class="material-symbols-outlined text-2xl mb-1">cake</span>
-                    <span class="text-[10px] font-bold tracking-wide">الحلويات</span>
-                </button>
-            
-                <button onclick="setCategory('shisha')" class="flex flex-col items-center justify-center min-w-[4.5rem] py-3 rounded-2xl transition-all duration-300 gap-1 border category-inactive border-transparent bg-gray-50">
-                    <span class="material-symbols-outlined text-2xl mb-1">smoking_rooms</span>
-                    <span class="text-[10px] font-bold tracking-wide">الأراكيل</span>
-                </button>
-            
-                <button onclick="setCategory('tea')" class="flex flex-col items-center justify-center min-w-[4.5rem] py-3 rounded-2xl transition-all duration-300 gap-1 border category-inactive border-transparent bg-gray-50">
-                    <span class="material-symbols-outlined text-2xl mb-1">emoji_food_beverage</span>
-                    <span class="text-[10px] font-bold tracking-wide">الشاي</span>
-                </button>
-            </div>
+        <div class="flex overflow-x-auto no-scrollbar px-4 gap-3" id="categories-container"></div>
     </div>
 
     <!-- Main Menu Content -->
     <main class="container mx-auto px-4 min-h-[600px] mt-6">
-        <div class="space-y-8 pb-8" id="menu-content">
+        <div class="space-y-8 pb-8" id="menu-content" style="display:none;">
                 <div class="animate-fade-in mb-6 flex items-center justify-between">
                     <h2 class="text-2xl font-black text-brand-green">القهوة المختصة</h2>
                     <div class="h-px bg-gray-200 flex-1 mr-4"></div>
@@ -759,6 +728,7 @@ wb);O(IMG_SEARCH_ATTRIBUTION_MAP,Pd);O(IMG_GEN_REPLACE_MAP,fa.A);X();jf();h.A=0}
 
         function renderMenu(items = null, isSearch = false) {
             const container = document.getElementById('menu-content');
+            container.style.display = '';
             let itemsToRender = items || menuItems.filter(item => item.category === activeCategory);
 
             if (itemsToRender.length === 0) {
