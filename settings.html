@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>الإعدادات العامة | iqr menu BACKOFFICE</title>
   <style>
-    :root { --color-primary:#5A3920; --ring:#2563EB; --radius-lg:16px; --shadow-sm:0 1px 2px rgba(0,0,0,.06); --shadow-md:0 4px 14px rgba(0,0,0,.12); }
+    :root { --color-primary:#003d29; --ring:#2563EB; --radius-lg:16px; --shadow-sm:0 1px 2px rgba(0,0,0,.06); --shadow-md:0 4px 14px rgba(0,0,0,.12); }
     body { font-family: system-ui, -apple-system, Segoe UI, Tahoma, Arial; background:#FAF7F4; color:#111827; margin:0; }
     .navbar { background:#fff; border-bottom:1px solid #E5E7EB; }
     .brand { font-weight:800; text-transform:lowercase; }
@@ -56,7 +56,7 @@
       <div class="grid-2">
         <div>
           <label class="block text-sm text-gray-700 mb-1">اللون الأساسي</label>
-          <input type="color" id="primaryColorPicker" class="w-20 h-10 p-0 border rounded" value="#5A3920" />
+          <input type="color" id="primaryColorPicker" class="w-20 h-10 p-0 border rounded" value="#003d29" />
           <div class="help">يتم تطبيق اللون فورًا.</div>
         </div>
       </div>
@@ -145,10 +145,18 @@
     (function initSettings() {
       const UPLOAD_ENDPOINT = '/api/upload-image';
       const picker = document.getElementById('primaryColorPicker');
+      try {
+        const saved = localStorage.getItem('menu_primary_color');
+        if (saved) {
+          document.documentElement.style.setProperty('--color-primary', saved);
+          if (picker) picker.value = saved;
+        }
+      } catch {}
       if (picker) {
         picker.addEventListener('input', () => {
-          const val = picker.value || '#5A3920';
+          const val = picker.value || '#003d29';
           document.documentElement.style.setProperty('--color-primary', val);
+          try { localStorage.setItem('menu_primary_color', val); } catch {}
         });
       }
 
@@ -202,9 +210,9 @@
         themesGrid.addEventListener('click',(e)=>{
           const btn = e.target.closest('button'); if (!btn) return;
           const card = e.target.closest('.theme-card'); if (!card) return;
-          const hex = card.getAttribute('data-hex')||'#5A3920';
+          const hex = card.getAttribute('data-hex')||'#003d29';
           const action = btn.getAttribute('data-action');
-          if (action==='apply') { document.documentElement.style.setProperty('--color-primary', hex); }
+          if (action==='apply') { document.documentElement.style.setProperty('--color-primary', hex); try{ localStorage.setItem('menu_primary_color', hex); }catch{} }
           else if (action==='copyHex') { navigator.clipboard && navigator.clipboard.writeText(hex); }
           else if (action==='copyRgb') { const rgb = toRgb(hex); navigator.clipboard && navigator.clipboard.writeText(rgbStr(rgb)); }
         });
@@ -253,7 +261,7 @@
       }
       if (hueSlider) hueSlider.addEventListener('input',()=>{ current.h = Number(hueSlider.value)||0; updateCodes(); });
       if (alphaSlider) alphaSlider.addEventListener('input',()=>{ current.a = (Number(alphaSlider.value)||0)/100; updateCodes(); });
-      if (applyBtn) applyBtn.addEventListener('click',()=>{ const hex = hexCode ? hexCode.value : '#5A3920'; document.documentElement.style.setProperty('--color-primary', hex); });
+      if (applyBtn) applyBtn.addEventListener('click',()=>{ const hex = hexCode ? hexCode.value : '#003d29'; document.documentElement.style.setProperty('--color-primary', hex); try{ localStorage.setItem('menu_primary_color', hex); }catch{} });
       updateCodes();
 
       const menuNameInput = document.getElementById('menuNameInput');

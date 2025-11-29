@@ -6,7 +6,7 @@
   <title>إدارة الأصناف | iqr menu BACKOFFICE</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap" rel="stylesheet" />
   <style>
-    :root { --color-primary:#5A3920; --ring:#2563EB; --radius-lg:16px; --shadow-sm:0 1px 2px rgba(0,0,0,.06); --shadow-md:0 4px 14px rgba(0,0,0,.12); }
+    :root { --color-primary:#003d29; --ring:#2563EB; --radius-lg:16px; --shadow-sm:0 1px 2px rgba(0,0,0,.06); --shadow-md:0 4px 14px rgba(0,0,0,.12); }
     body { font-family: Cairo, system-ui, -apple-system, Segoe UI, Tahoma, Arial; background:#FAF7F4; color:#111827; margin:0; }
     .navbar { background:#fff; border-bottom:1px solid #E5E7EB; }
     .brand { font-weight:800; text-transform:lowercase; }
@@ -36,6 +36,11 @@
     .modal-grid { display:grid; gap:1rem; grid-template-columns:1fr; }
     @media (min-width:640px){ .modal-grid { grid-template-columns:1fr 1fr; } }
   </style>
+  <script>
+    try { const c = localStorage.getItem('menu_primary_color'); if (c) { document.documentElement.style.setProperty('--color-primary', c); } }
+    catch {}
+  </script>
+  <script>try{var dbg=localStorage.getItem('menu_debug')==='1';if(!dbg&&!window.__muteLogs){window.__muteLogs=true;['log','info','debug','warn','error','assert','table','trace','group','groupCollapsed','groupEnd'].forEach(function(m){try{console[m]=function(){}}catch(_){}});window.onerror=function(){return true};window.addEventListener('error',function(e){try{if(e&&e.preventDefault)e.preventDefault()}catch(_){}} ,true);window.addEventListener('unhandledrejection',function(e){try{if(e&&e.preventDefault)e.preventDefault()}catch(_){}});} }catch(_){}</script>
 </head>
 <body>
   <nav class="navbar w-full py-2 px-4 sm:px-8 flex items-center justify-between">
@@ -190,7 +195,7 @@
     async function loadData() { try { const raw=localStorage.getItem(STORAGE_KEY); if (raw) { const arr=JSON.parse(raw); if (Array.isArray(arr)) return arr; } } catch {} try { const data=await loadJson('assets/menu.json'); if (Array.isArray(data)) return data; } catch {} return []; }
     function saveCategories() { localStorage.setItem(CATS_KEY, JSON.stringify(categories)); }
     function loadCategories() { try { const raw=localStorage.getItem(CATS_KEY); if (raw) { const arr=JSON.parse(raw); if (Array.isArray(arr)) return arr; } } catch {} return []; }
-    function deriveCategoriesFromItems(itemsArr) { const set = new Set(itemsArr.map(i => (i.category||'').trim()).filter(Boolean)); if (!set.size) ['القهوة','الشاي','العصائر'].forEach(c=>set.add(c)); return Array.from(set); }
+    function deriveCategoriesFromItems(itemsArr) { const set = new Set(itemsArr.map(i => (i.category||'').trim()).filter(Boolean)); return Array.from(set); }
 
     function renderCatTabs() {
       if (!els.catTabs) return;
@@ -237,7 +242,7 @@
       els.modalTitle.textContent = item ? 'تعديل صنف' : 'إضافة صنف';
       editingId = item ? item.id : null;
       els.fName.value = item?.name || '';
-      renderCategoryOptions(item?.category || categories[0] || 'القهوة');
+      renderCategoryOptions(item?.category || categories[0] || '');
       els.fPrice.value = item?.price != null ? item.price : '';
       els.fImage.value = item?.imageUrl || '';
       els.fDesc.value = item?.description || '';
