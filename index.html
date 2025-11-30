@@ -672,19 +672,29 @@ wb);O(IMG_SEARCH_ATTRIBUTION_MAP,Pd);O(IMG_GEN_REPLACE_MAP,fa.A);X();jf();h.A=0}
         let categories = [];
         let menuItems = [];
         let activeCategory = '';
+        window.GH_OWNER = window.GH_OWNER || (window.DATA_REPO && window.DATA_REPO.owner) || '';
+        window.GH_REPO = window.GH_REPO || (window.DATA_REPO && window.DATA_REPO.repo) || '';
+        window.GH_BRANCH = window.GH_BRANCH || (window.DATA_REPO && window.DATA_REPO.branch) || 'main';
+        const isGhEnabled = () => Boolean(window.GH_OWNER && window.GH_REPO);
+        const ghUrls = (path) => { const t=Date.now(); const p=String(path||'').replace(/^\//,''); return [
+          `https://raw.githubusercontent.com/${window.GH_OWNER}/${window.GH_REPO}/${window.GH_BRANCH}/${p}?t=${t}`,
+          `https://cdn.jsdelivr.net/gh/${window.GH_OWNER}/${window.GH_REPO}@${window.GH_BRANCH}/${p}?t=${t}`
+        ]; };
+        async function initDataRepoConfig(){ if (isGhEnabled()) return; try { const resp=await fetch('/api/config'); if (resp.ok){ const j=await resp.json(); if (j&&j.ok&&j.owner&&j.repo){ window.GH_OWNER=j.owner; window.GH_REPO=j.repo; window.GH_BRANCH=j.branch||'main'; } } } catch {} }
+        function resolveAssetUrl(path){ const raw=String(path||'').trim(); if(!raw) return ''; if(/^(?:https?:)?\/\//i.test(raw)) return raw; if(!isGhEnabled()) return raw; const rel=raw.replace(/^\//,''); if(!/^assets\//.test(rel)) return raw; return `https://raw.githubusercontent.com/${window.GH_OWNER}/${window.GH_REPO}/${window.GH_BRANCH}/${rel}`; }
 
-        async function loadJson(path){ try{ const r = await fetch(path,{cache:'no-store'}); if(!r.ok) return []; return await r.json(); } catch{ return []; } }
+        async function loadJson(path){ try{ if (isGhEnabled()){ const urls=ghUrls(path); for(let i=0;i<urls.length;i++){ try{ const r=await fetch(urls[i],{cache:'no-store'}); if(r.ok) return await r.json(); } catch{} } } const t=Date.now(); const base=String(path||''); const url = base + (base.includes('?')?'&':'?') + 't=' + t; const r = await fetch(url,{cache:'no-store'}); if(!r.ok) return []; return await r.json(); } catch{ return []; } }
         function sanitizeCategory(c){ if(typeof c==='string'){ const name=c.trim(); return name?{ id:name, name, icon:'category' }:null; } if(c&&typeof c==='object'){ const name=(c.name||'').trim(); return name?{ id:name, name, icon:'category' }:null; } return null; }
-        function sanitizeItem(i, idx){ const name=String(i&&i.name||'').trim(); const cat=String(i&&i.category||'').trim(); const img=String(i&&i.imageUrl||'').trim(); const desc=String(i&&i.description||i&&i.desc||'').trim(); return { id: Number(i&&i.id)|| (idx+1), category: cat, name, price: Number(i&&i.price)||0, desc, image: img }; }
+        function sanitizeItem(i, idx){ const name=String(i&&i.name||'').trim(); const cat=String(i&&i.category||'').trim(); const img=String(i&&i.imageUrl||'').trim(); const desc=String(i&&i.description||i&&i.desc||'').trim(); return { id: Number(i&&i.id)|| (idx+1), category: cat, name, price: Number(i&&i.price)||0, desc, image: resolveAssetUrl(img) }; }
 
         async function initData(){ const cats = await loadJson('assets/categories.json'); const items = await loadJson('assets/menu.json'); categories = Array.isArray(cats)? cats.map(sanitizeCategory).filter(Boolean):[]; menuItems = Array.isArray(items)? items.map(sanitizeItem):[]; activeCategory = categories[0]?.id || (menuItems[0]?.category || ''); renderCategories(); renderMenu(); }
 
-        async function loadHero(){ try{ const data = await loadJson('assets/hero.json'); if (!data || typeof data!=='object') return; const title = String(data.title||'').trim(); const imgUrl = String(data.imageUrl||'').trim(); const videoUrl = String(data.videoUrl||'').trim(); const type = String(data.mediaType||'image').toLowerCase(); const titleEl = document.getElementById('homeHeroTitle'); const imgEl = document.getElementById('homeHeroImg'); const vidEl = document.getElementById('homeHeroVideo'); if (titleEl && title) { titleEl.innerHTML = title.replace(/\n/g,'<br>'); } if (type==='video' && videoUrl && vidEl) { vidEl.style.display='block'; vidEl.src = videoUrl; try{ vidEl.play().catch(()=>{});}catch(_){} if (imgEl) { imgEl.style.display='none'; imgEl.removeAttribute('src'); } } else if (imgUrl && imgEl) { imgEl.style.display='block'; imgEl.src = imgUrl; if (vidEl) { vidEl.style.display='none'; vidEl.removeAttribute('src'); } } } catch{} }
+        async function loadHero(){ try{ const data = await loadJson('assets/hero.json'); if (!data || typeof data!=='object') return; const title = String(data.title||'').trim(); const imgUrl = String(data.imageUrl||'').trim(); const videoUrl = String(data.videoUrl||'').trim(); const type = String(data.mediaType||'image').toLowerCase(); const titleEl = document.getElementById('homeHeroTitle'); const imgEl = document.getElementById('homeHeroImg'); const vidEl = document.getElementById('homeHeroVideo'); if (titleEl && title) { titleEl.innerHTML = title.replace(/\n/g,'<br>'); } if (type==='video' && videoUrl && vidEl) { const vsrc = resolveAssetUrl(videoUrl); vidEl.style.display='block'; vidEl.src = vsrc; try{ vidEl.play().catch(()=>{});}catch(_){} if (imgEl) { imgEl.style.display='none'; imgEl.removeAttribute('src'); } } else if (imgUrl && imgEl) { const isrc = resolveAssetUrl(imgUrl); imgEl.style.display='block'; imgEl.src = isrc; if (vidEl) { vidEl.style.display='none'; vidEl.removeAttribute('src'); } } } catch{} }
 
         let cart = {};
 
-        function applyHeaderLogo(){ try{ var el=document.getElementById('headerLogo'); if(!el) return; var url=localStorage.getItem('restaurant_logo_url')||''; if(url){ el.src=url; } }catch(_){} }
-        document.addEventListener('DOMContentLoaded', () => { initData(); loadHero(); applyHeaderLogo(); });
+        function applyHeaderLogo(){ try{ var el=document.getElementById('headerLogo'); if(!el) return; var url=localStorage.getItem('restaurant_logo_url')||''; if(url){ el.src=resolveAssetUrl(url); } }catch(_){} }
+        document.addEventListener('DOMContentLoaded', () => { (async()=>{ await initDataRepoConfig(); await initData(); await loadHero(); applyHeaderLogo(); })(); });
 
         function toggleSearch() {
             const bar = document.getElementById('searchBar');
