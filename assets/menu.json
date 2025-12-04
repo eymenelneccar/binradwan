@@ -796,7 +796,7 @@
     "name": "برتقال",
     "category": "عصير فريش",
     "price": 3500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764879667150-IMG_2414.jpeg.jpg",
     "description": ""
   },
   {
@@ -804,7 +804,7 @@
     "name": "ليمون",
     "category": "عصير فريش",
     "price": 3500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764879638965-IMG_2416.jpeg.jpg",
     "description": ""
   },
   {
@@ -812,7 +812,7 @@
     "name": "موز",
     "category": "عصير فريش",
     "price": 3000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764879607071-IMG_2419.jpeg.jpg",
     "description": ""
   },
   {
@@ -820,7 +820,7 @@
     "name": "بطيخ",
     "category": "عصير فريش",
     "price": 3000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764879598175-IMG_2420.jpeg.jpg",
     "description": ""
   },
   {
@@ -828,7 +828,7 @@
     "name": "كيوي",
     "category": "عصير فريش",
     "price": 3500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764879625975-IMG_2417.jpeg.jpg",
     "description": ""
   },
   {
@@ -836,7 +836,7 @@
     "name": "فراولة",
     "category": "عصير فريش",
     "price": 3500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764879654527-IMG_2415.jpeg.jpg",
     "description": ""
   },
   {
@@ -844,7 +844,7 @@
     "name": "رمان",
     "category": "عصير فريش",
     "price": 3500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764879584149-IMG_2421.jpeg.jpg",
     "description": ""
   },
   {
@@ -852,7 +852,7 @@
     "name": "جزر",
     "category": "عصير فريش",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764879615850-IMG_2418.jpeg.jpg",
     "description": ""
   },
   {
@@ -1185,10 +1185,10 @@
   },
   {
     "id": 1764798877377,
-    "name": "بندق",
-    "category": "القهوة التركية الحارة",
-    "price": 3000,
-    "imageUrl": "",
+    "name": "فراولة",
+    "category": "عصير فريش",
+    "price": 3500,
+    "imageUrl": "/assets/images/1764879654527-IMG_2415.jpeg.jpg",
     "description": ""
   },
   {
