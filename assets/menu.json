@@ -4,7 +4,7 @@
     "name": "ايس لاتيه",
     "category": "ايس كوفي",
     "price": 3000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764876999090-IMG_2320.jpeg.jpg",
     "description": ""
   },
   {
@@ -12,7 +12,7 @@
     "name": "ايس لاتيه فانيلا",
     "category": "ايس كوفي",
     "price": 3500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877024422-IMG_2321.jpeg.jpg",
     "description": ""
   },
   {
@@ -20,7 +20,7 @@
     "name": "ايس لاتيه كراميل",
     "category": "ايس كوفي",
     "price": 3500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764876951005-IMG_2317.jpeg.jpg",
     "description": ""
   },
   {
@@ -28,7 +28,7 @@
     "name": "ايس لاتيه بندق",
     "category": "ايس كوفي",
     "price": 3500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764876982297-IMG_2319.jpeg.jpg",
     "description": ""
   },
   {
@@ -36,7 +36,7 @@
     "name": "ايس لاتيه بستاشيو",
     "category": "ايس كوفي",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764876967278-IMG_2318.jpeg.jpg",
     "description": ""
   },
   {
@@ -44,7 +44,7 @@
     "name": "هوت شوكولاتة",
     "category": "شوكولاته حارة",
     "price": 3000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877086187-IMG_2324.jpeg.jpg",
     "description": ""
   },
   {
@@ -52,7 +52,7 @@
     "name": "هوت بلاك بيري",
     "category": "شوكولاته حارة",
     "price": 3500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877101140-IMG_2325.jpeg.jpg",
     "description": ""
   },
   {
@@ -60,7 +60,7 @@
     "name": "هوت موز",
     "category": "شوكولاته حارة",
     "price": 3500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877116550-IMG_2326.jpeg.jpg",
     "description": ""
   },
   {
@@ -68,7 +68,7 @@
     "name": "هوت فراولة",
     "category": "شوكولاته حارة",
     "price": 3500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877130561-IMG_2327.jpeg.jpg",
     "description": ""
   },
   {
@@ -76,7 +76,7 @@
     "name": "هوت بلو بيري",
     "category": "شوكولاته حارة",
     "price": 3500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877145190-IMG_2328.jpeg.jpg",
     "description": ""
   },
   {
@@ -84,7 +84,7 @@
     "name": "هوت بندق",
     "category": "شوكولاته حارة",
     "price": 3500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877044452-IMG_2322.jpeg.jpg",
     "description": ""
   },
   {
@@ -92,7 +92,7 @@
     "name": "هوت توت بري",
     "category": "شوكولاته حارة",
     "price": 3500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877163860-IMG_2329.jpeg.jpg",
     "description": ""
   },
   {
@@ -100,7 +100,7 @@
     "name": "هوت بيضاء كلاسك",
     "category": "شوكولاته حارة",
     "price": 3500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877061537-IMG_2323.jpeg.jpg",
     "description": ""
   },
   {
@@ -108,7 +108,7 @@
     "name": "آيس شوكولاتة",
     "category": "شوكولاته باردة",
     "price": 3500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877232198-IMG_2333.jpeg.jpg",
     "description": ""
   },
   {
@@ -116,7 +116,7 @@
     "name": "آيس بروني",
     "category": "شوكولاته باردة",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877201722-IMG_2331.jpeg.jpg",
     "description": ""
   },
   {
@@ -124,7 +124,7 @@
     "name": "آيس بندق",
     "category": "شوكولاته باردة",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877218150-IMG_2332.jpeg.jpg",
     "description": ""
   },
   {
@@ -132,7 +132,7 @@
     "name": "آيس وايت",
     "category": "شوكولاته باردة",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877188446-IMG_2330.jpeg.jpg",
     "description": ""
   },
   {
@@ -140,7 +140,7 @@
     "name": "كلاسك",
     "category": "القهوة التركية الباردة",
     "price": 3500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877286375-IMG_2335.jpeg.jpg",
     "description": ""
   },
   {
@@ -156,7 +156,7 @@
     "name": "تركش ايزولاسيون",
     "category": "القهوة التركية الباردة",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877443308-IMG_2342.jpeg.jpg",
     "description": ""
   },
   {
@@ -164,7 +164,7 @@
     "name": "بلاك بيري",
     "category": "القهوة التركية الباردة",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877458063-IMG_2343.jpeg.jpg",
     "description": ""
   },
   {
@@ -172,7 +172,7 @@
     "name": "بندق",
     "category": "القهوة التركية الباردة",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877271575-IMG_2334.jpeg.jpg",
     "description": ""
   },
   {
@@ -180,7 +180,7 @@
     "name": "علكة",
     "category": "القهوة التركية الباردة",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877356960-IMG_2340.jpeg.jpg",
     "description": ""
   },
   {
@@ -188,7 +188,7 @@
     "name": "فراولة",
     "category": "القهوة التركية الباردة",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877330161-IMG_2339.jpeg.jpg",
     "description": ""
   },
   {
@@ -204,7 +204,7 @@
     "name": "بطيخ",
     "category": "القهوة التركية الباردة",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877418946-IMG_2341.jpeg.jpg",
     "description": ""
   },
   {
@@ -212,7 +212,7 @@
     "name": "نعناع",
     "category": "القهوة التركية الباردة",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877312698-IMG_2337.jpeg.jpg",
     "description": ""
   },
   {
@@ -220,7 +220,7 @@
     "name": "فرايبه كلاسك",
     "category": "فرايبه",
     "price": 3500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877511547-IMG_2346.jpeg.jpg",
     "description": ""
   },
   {
@@ -228,7 +228,7 @@
     "name": "فرايبه موز",
     "category": "فرايبه",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877669217-IMG_2350.jpeg.jpg",
     "description": ""
   },
   {
@@ -236,7 +236,7 @@
     "name": "فرايبه أوريو",
     "category": "فرايبه",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877498922-IMG_2345.jpeg.jpg",
     "description": ""
   },
   {
@@ -244,15 +244,7 @@
     "name": "فرايبه كندر",
     "category": "فرايبه",
     "price": 4000,
-    "imageUrl": "",
-    "description": ""
-  },
-  {
-    "id": 1764798877690,
-    "name": "فرايبه شوكولاته",
-    "category": "فرايبه",
-    "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877485059-IMG_2344.jpeg.jpg",
     "description": ""
   },
   {
@@ -260,7 +252,7 @@
     "name": "فرايبه بندق",
     "category": "فرايبه",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877606998-IMG_2348.jpeg.jpg",
     "description": ""
   },
   {
@@ -268,7 +260,7 @@
     "name": "فرايبه كراميل",
     "category": "فرايبه",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877651237-IMG_2349.jpeg.jpg",
     "description": ""
   },
   {
@@ -276,7 +268,7 @@
     "name": "كلاسك",
     "category": "ليموناده",
     "price": 3500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877800892-IMG_2357.jpeg.jpg",
     "description": ""
   },
   {
@@ -284,7 +276,7 @@
     "name": "نعناع",
     "category": "ليموناده",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877895259-IMG_2354.jpeg.jpg",
     "description": ""
   },
   {
@@ -292,7 +284,7 @@
     "name": "نعناع وتفاح",
     "category": "ليموناده",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877874843-IMG_2355.jpeg.jpg",
     "description": ""
   },
   {
@@ -300,7 +292,7 @@
     "name": "تفاح أخضر",
     "category": "ليموناده",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877847004-IMG_2356.jpeg.jpg",
     "description": ""
   },
   {
@@ -308,7 +300,7 @@
     "name": "توت بري",
     "category": "ليموناده",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877915952-IMG_2353.jpeg.jpg",
     "description": ""
   },
   {
@@ -316,7 +308,7 @@
     "name": "فراولة",
     "category": "ليموناده",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877709817-IMG_2352.jpeg.jpg",
     "description": ""
   },
   {
@@ -324,7 +316,7 @@
     "name": "آيس كريم تفاح",
     "category": "ليموناده",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877827312-IMG_2362.jpeg.jpg",
     "description": ""
   },
   {
@@ -332,7 +324,7 @@
     "name": "آيس كريم رقي",
     "category": "ليموناده",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877861189-IMG_2363.jpeg.jpg",
     "description": ""
   },
   {
@@ -340,7 +332,7 @@
     "name": "آيس كريم بلو بيري",
     "category": "ليموناده",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877764926-IMG_2361.jpeg.jpg",
     "description": ""
   },
   {
@@ -348,7 +340,7 @@
     "name": "آيس كريم بلاك بيري",
     "category": "ليموناده",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877686454-IMG_2359.jpeg.jpg",
     "description": ""
   },
   {
@@ -356,7 +348,7 @@
     "name": "آيس كريم فراولة",
     "category": "ليموناده",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877934407-IMG_2364.jpeg.jpg",
     "description": ""
   },
   {
@@ -364,7 +356,7 @@
     "name": "آيس كريم فواكه حمراء",
     "category": "ليموناده",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877726313-IMG_2360.jpeg.jpg",
     "description": ""
   },
   {
@@ -372,7 +364,7 @@
     "name": "فراولة",
     "category": "سموذي",
     "price": 4500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878172151-IMG_2371.jpeg.jpg",
     "description": ""
   },
   {
@@ -380,7 +372,7 @@
     "name": "مانجو",
     "category": "سموذي",
     "price": 4500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877957925-IMG_2365.jpeg.jpg",
     "description": ""
   },
   {
@@ -388,7 +380,7 @@
     "name": "بلو بيري",
     "category": "سموذي",
     "price": 4500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878153179-IMG_2370.jpeg.jpg",
     "description": ""
   },
   {
@@ -396,7 +388,7 @@
     "name": "بلاك بيري",
     "category": "سموذي",
     "price": 4500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877973248-IMG_2366.jpeg.jpg",
     "description": ""
   },
   {
@@ -404,7 +396,7 @@
     "name": "خوخ",
     "category": "سموذي",
     "price": 4500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878095179-IMG_2368.jpeg.jpg",
     "description": ""
   },
   {
@@ -412,7 +404,7 @@
     "name": "فاكهة برية",
     "category": "سموذي",
     "price": 4500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878116263-IMG_2369.jpeg.jpg",
     "description": ""
   },
   {
@@ -420,7 +412,7 @@
     "name": "فواكه حمراء",
     "category": "سموذي",
     "price": 4500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878075119-IMG_2367.jpeg.jpg",
     "description": ""
   },
   {
@@ -436,7 +428,7 @@
     "name": "كراميل",
     "category": "ميلك شيك",
     "price": 4500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878403288-IMG_2383.jpeg.jpg",
     "description": ""
   },
   {
@@ -444,7 +436,7 @@
     "name": "علك بوبي",
     "category": "ميلك شيك",
     "price": 4500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878426090-IMG_2386.jpeg.jpg",
     "description": ""
   },
   {
@@ -452,7 +444,7 @@
     "name": "فواكه حمراء",
     "category": "ميلك شيك",
     "price": 4500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878447711-IMG_2384.jpeg.jpg",
     "description": ""
   },
   {
@@ -460,7 +452,7 @@
     "name": "فراولة",
     "category": "ميلك شيك",
     "price": 4500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878234013-IMG_2375.jpeg.jpg",
     "description": ""
   },
   {
@@ -468,7 +460,7 @@
     "name": "شوكولاته",
     "category": "ميلك شيك",
     "price": 4500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878201002-IMG_2373.jpeg.jpg",
     "description": ""
   },
   {
@@ -476,7 +468,7 @@
     "name": "فانيلا",
     "category": "ميلك شيك",
     "price": 4500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878491704-IMG_2393.jpeg.jpg",
     "description": ""
   },
   {
@@ -484,7 +476,7 @@
     "name": "توت بري",
     "category": "ميلك شيك",
     "price": 4500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878384598-IMG_2381.jpeg.jpg",
     "description": ""
   },
   {
@@ -492,7 +484,7 @@
     "name": "لوتس",
     "category": "ميلك شيك",
     "price": 5000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878323739-IMG_2377.jpeg.jpg",
     "description": ""
   },
   {
@@ -500,23 +492,23 @@
     "name": "أوريو",
     "category": "ميلك شيك",
     "price": 5000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878548524-IMG_2390.jpeg.jpg",
     "description": ""
   },
   {
     "id": 1764798877693,
-    "name": "سيريلاك",
-    "category": "ميلك شيك",
-    "price": 5000,
-    "imageUrl": "",
+    "name": "آيس شوكولاتة",
+    "category": "شوكولاته باردة",
+    "price": 3500,
+    "imageUrl": "/assets/images/1764877232198-IMG_2333.jpeg.jpg",
     "description": ""
   },
   {
     "id": 1764798878056,
-    "name": "سنكرز",
-    "category": "ميلك شيك",
-    "price": 5000,
-    "imageUrl": "",
+    "name": "آيس كريم بلاك بيري",
+    "category": "ليموناده",
+    "price": 4000,
+    "imageUrl": "/assets/images/1764877686454-IMG_2359.jpeg.jpg",
     "description": ""
   },
   {
@@ -524,7 +516,7 @@
     "name": "كندر",
     "category": "ميلك شيك",
     "price": 5000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878342345-IMG_2376.jpeg.jpg",
     "description": ""
   },
   {
@@ -532,15 +524,15 @@
     "name": "حلاوة راشي",
     "category": "ميلك شيك",
     "price": 5000,
-    "imageUrl": "/assets/images/1764799275814-WhatsAppImage2025-12-03at11.34.56PM.jpeg.jpg",
+    "imageUrl": "/assets/images/1764878366356-IMG_2380.jpeg.jpg",
     "description": ""
   },
   {
     "id": 1764798877461,
-    "name": "نوتيلا",
-    "category": "ميلك شيك",
-    "price": 5000,
-    "imageUrl": "",
+    "name": "تفاح أخضر",
+    "category": "ليموناده",
+    "price": 4000,
+    "imageUrl": "/assets/images/1764877847004-IMG_2356.jpeg.jpg",
     "description": ""
   },
   {
@@ -548,7 +540,7 @@
     "name": "كتكات",
     "category": "ميلك شيك",
     "price": 5000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878217622-IMG_2374.jpeg.jpg",
     "description": ""
   },
   {
@@ -556,7 +548,7 @@
     "name": "بستاشيو",
     "category": "ميلك شيك",
     "price": 5000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878467648-IMG_2385.jpeg.jpg",
     "description": ""
   },
   {
@@ -564,7 +556,7 @@
     "name": "آيس أمريكانو",
     "category": "القهوة الباردة",
     "price": 3000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878878507-IMG_2398.jpeg.jpg",
     "description": ""
   },
   {
@@ -572,7 +564,7 @@
     "name": "آيس لاتيه",
     "category": "القهوة الباردة",
     "price": 3500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878845792-IMG_2396.jpeg.jpg",
     "description": ""
   },
   {
@@ -580,7 +572,7 @@
     "name": "آيس لاتيه كراميل",
     "category": "القهوة الباردة",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878764342-IMG_2392.jpeg.jpg",
     "description": ""
   },
   {
@@ -588,7 +580,7 @@
     "name": "آيس كوفي",
     "category": "القهوة الباردة",
     "price": 3500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878865556-IMG_2397.jpeg.jpg",
     "description": ""
   },
   {
@@ -596,7 +588,7 @@
     "name": "آيس موكا",
     "category": "القهوة الباردة",
     "price": 3500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878687018-IMG_2394.jpeg.jpg",
     "description": ""
   },
   {
@@ -604,7 +596,7 @@
     "name": "آيس موكا دارك",
     "category": "القهوة الباردة",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878595166-IMG_2390.jpeg.jpg",
     "description": ""
   },
   {
@@ -612,7 +604,7 @@
     "name": "آيس موكا وايت",
     "category": "القهوة الباردة",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878665253-IMG_2393.jpeg.jpg",
     "description": ""
   },
   {
@@ -620,7 +612,7 @@
     "name": "شاي لاتيه",
     "category": "القهوة الباردة",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878790534-IMG_2395.jpeg.jpg",
     "description": ""
   },
   {
@@ -628,7 +620,7 @@
     "name": "فرديتشينو",
     "category": "القهوة الباردة",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878614682-IMG_2389.jpeg.jpg",
     "description": ""
   },
   {
@@ -636,7 +628,7 @@
     "name": "فرديتشينو كراميل",
     "category": "القهوة الباردة",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878575356-IMG_2388.jpeg.jpg",
     "description": ""
   },
   {
@@ -644,7 +636,7 @@
     "name": "فرديتشينو بستاشيو",
     "category": "القهوة الباردة",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878632527-IMG_2391.jpeg.jpg",
     "description": ""
   },
   {
@@ -700,7 +692,7 @@
     "name": "تفاح أخضر",
     "category": "فروزن ازبيري",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764878936198-IMG_2399.jpeg.jpg",
     "description": ""
   },
   {
@@ -729,10 +721,10 @@
   },
   {
     "id": 1764798877562,
-    "name": "كلاسك",
-    "category": "موهيتو",
-    "price": 3500,
-    "imageUrl": "",
+    "name": "فرديتشينو بستاشيو",
+    "category": "القهوة الباردة",
+    "price": 4000,
+    "imageUrl": "/assets/images/1764878632527-IMG_2391.jpeg.jpg",
     "description": ""
   },
   {
@@ -912,14 +904,6 @@
     "description": ""
   },
   {
-    "id": 1764798877690,
-    "name": "لاتيه كلاسك",
-    "category": "كافي لاتيه CAFFEE LATTE",
-    "price": 3500,
-    "imageUrl": "",
-    "description": ""
-  },
-  {
     "id": 1764798877583,
     "name": "لاتيه فانيلا",
     "category": "كافي لاتيه CAFFEE LATTE",
@@ -969,10 +953,10 @@
   },
   {
     "id": 1764798877227,
-    "name": "فرنش بريس",
-    "category": "القهوة المختصة",
-    "price": 5000,
-    "imageUrl": "",
+    "name": "تركش ايزولاسيون",
+    "category": "القهوة التركية الباردة",
+    "price": 4000,
+    "imageUrl": "/assets/images/1764877443308-IMG_2342.jpeg.jpg",
     "description": ""
   },
   {
@@ -1009,10 +993,10 @@
   },
   {
     "id": 1764798877918,
-    "name": "لاتيه ذهب",
-    "category": "قهوة بالذهب GOLD COFFEE",
-    "price": 4000,
-    "imageUrl": "",
+    "name": "هوت بيضاء كلاسك",
+    "category": "شوكولاته حارة",
+    "price": 3500,
+    "imageUrl": "/assets/images/1764877061537-IMG_2323.jpeg.jpg",
     "description": ""
   },
   {
@@ -1073,10 +1057,10 @@
   },
   {
     "id": 1764798877232,
-    "name": "كابتشينو بالحليب",
-    "category": "كابتشينو",
-    "price": 4000,
-    "imageUrl": "",
+    "name": "فانيلا",
+    "category": "ميلك شيك",
+    "price": 4500,
+    "imageUrl": "/assets/images/1764878491704-IMG_2393.jpeg.jpg",
     "description": ""
   },
   {
@@ -1193,10 +1177,10 @@
   },
   {
     "id": 1764798877534,
-    "name": "شوكولاتة",
-    "category": "القهوة التركية الحارة",
-    "price": 3000,
-    "imageUrl": "",
+    "name": "توت بري",
+    "category": "ميلك شيك",
+    "price": 4500,
+    "imageUrl": "/assets/images/1764878384598-IMG_2381.jpeg.jpg",
     "description": ""
   },
   {
@@ -1225,10 +1209,10 @@
   },
   {
     "id": 1764798877567,
-    "name": "بطيخ",
-    "category": "القهوة التركية الحارة",
-    "price": 3000,
-    "imageUrl": "",
+    "name": "علكة",
+    "category": "القهوة التركية الباردة",
+    "price": 4000,
+    "imageUrl": "/assets/images/1764877356960-IMG_2340.jpeg.jpg",
     "description": ""
   },
   {
@@ -1313,10 +1297,10 @@
   },
   {
     "id": 1764798877238,
-    "name": "ماكياتو فراولة",
-    "category": "لاتيه ماكياتو",
+    "name": "توت بري",
+    "category": "ليموناده",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764877915952-IMG_2353.jpeg.jpg",
     "description": ""
   },
   {
