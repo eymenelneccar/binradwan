@@ -644,7 +644,7 @@
     "name": "موز",
     "category": "فروزن ازبيري",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764885116964-IMG_2419.jpeg.jpg",
     "description": ""
   },
   {
@@ -652,7 +652,7 @@
     "name": "بطيخ",
     "category": "فروزن ازبيري",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764885186271-IMG_2406.jpeg.jpg",
     "description": ""
   },
   {
@@ -660,7 +660,7 @@
     "name": "رقي",
     "category": "فروزن ازبيري",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764885100334-IMG_2402.jpeg.jpg",
     "description": ""
   },
   {
@@ -668,7 +668,7 @@
     "name": "فراولة",
     "category": "فروزن ازبيري",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764885134960-IMG_2404.jpeg.jpg",
     "description": ""
   },
   {
@@ -676,7 +676,7 @@
     "name": "خوخ",
     "category": "فروزن ازبيري",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764885088049-IMG_2368.jpeg.jpg",
     "description": ""
   },
   {
@@ -684,7 +684,7 @@
     "name": "فاكهة برية",
     "category": "فروزن ازبيري",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764885052776-IMG_2512.jpeg.jpg",
     "description": ""
   },
   {
@@ -700,7 +700,7 @@
     "name": "مانكو وبطيخ",
     "category": "فروزن ازبيري",
     "price": 4000,
-    "imageUrl": "/assets/images/1764880637595-IMG_2447.jpeg.jpg",
+    "imageUrl": "/assets/images/1764885070672-IMG_2400.jpeg.jpg",
     "description": ""
   },
   {
@@ -708,7 +708,7 @@
     "name": "رقي وفراولة",
     "category": "فروزن ازبيري",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764885210357-IMG_2407.jpeg.jpg",
     "description": ""
   },
   {
@@ -716,7 +716,7 @@
     "name": "ليمون حامض حلو",
     "category": "فروزن ازبيري",
     "price": 4000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1764885157374-IMG_2405.jpeg.jpg",
     "description": ""
   },
   {
@@ -961,10 +961,10 @@
   },
   {
     "id": 1764798877389,
-    "name": "سايفون",
-    "category": "القهوة المختصة",
-    "price": 5000,
-    "imageUrl": "",
+    "name": "فراولة",
+    "category": "فروزن ازبيري",
+    "price": 4000,
+    "imageUrl": "/assets/images/1764885134960-IMG_2404.jpeg.jpg",
     "description": ""
   },
   {
@@ -1172,7 +1172,7 @@
     "name": "مانكو وبطيخ",
     "category": "فروزن ازبيري",
     "price": 4000,
-    "imageUrl": "/assets/images/1764880637595-IMG_2447.jpeg.jpg",
+    "imageUrl": "/assets/images/1764885070672-IMG_2400.jpeg.jpg",
     "description": ""
   },
   {
