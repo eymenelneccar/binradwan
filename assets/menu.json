@@ -3,7 +3,7 @@
     "id": 1764436369327,
     "name": "ايس لاتيه",
     "category": "ايس كوفي",
-    "price": 3000,
+    "price": 3500,
     "imageUrl": "/assets/images/1764876999090-IMG_2320.jpeg.jpg",
     "description": ""
   },
@@ -11,7 +11,7 @@
     "id": 1764436369306,
     "name": "ايس لاتيه فانيلا",
     "category": "ايس كوفي",
-    "price": 3500,
+    "price": 4000,
     "imageUrl": "/assets/images/1764877024422-IMG_2321.jpeg.jpg",
     "description": ""
   },
@@ -19,7 +19,7 @@
     "id": 1764436370031,
     "name": "ايس لاتيه كراميل",
     "category": "ايس كوفي",
-    "price": 3500,
+    "price": 4000,
     "imageUrl": "/assets/images/1764876951005-IMG_2317.jpeg.jpg",
     "description": ""
   },
@@ -27,7 +27,7 @@
     "id": 1764436369341,
     "name": "ايس لاتيه بندق",
     "category": "ايس كوفي",
-    "price": 3500,
+    "price": 4000,
     "imageUrl": "/assets/images/1764876982297-IMG_2319.jpeg.jpg",
     "description": ""
   },
@@ -316,7 +316,7 @@
     "name": "آيس كريم تفاح",
     "category": "ليموناده",
     "price": 4000,
-    "imageUrl": "/assets/images/1764877827312-IMG_2362.jpeg.jpg",
+    "imageUrl": "",
     "description": ""
   },
   {
@@ -324,7 +324,7 @@
     "name": "آيس كريم رقي",
     "category": "ليموناده",
     "price": 4000,
-    "imageUrl": "/assets/images/1764877861189-IMG_2363.jpeg.jpg",
+    "imageUrl": "",
     "description": ""
   },
   {
@@ -332,7 +332,7 @@
     "name": "آيس كريم بلو بيري",
     "category": "ليموناده",
     "price": 4000,
-    "imageUrl": "/assets/images/1764877764926-IMG_2361.jpeg.jpg",
+    "imageUrl": "",
     "description": ""
   },
   {
@@ -340,7 +340,7 @@
     "name": "آيس كريم بلاك بيري",
     "category": "ليموناده",
     "price": 4000,
-    "imageUrl": "/assets/images/1764877686454-IMG_2359.jpeg.jpg",
+    "imageUrl": "",
     "description": ""
   },
   {
@@ -348,7 +348,7 @@
     "name": "آيس كريم فراولة",
     "category": "ليموناده",
     "price": 4000,
-    "imageUrl": "/assets/images/1764877934407-IMG_2364.jpeg.jpg",
+    "imageUrl": "",
     "description": ""
   },
   {
@@ -356,7 +356,7 @@
     "name": "آيس كريم فواكه حمراء",
     "category": "ليموناده",
     "price": 4000,
-    "imageUrl": "/assets/images/1764877726313-IMG_2360.jpeg.jpg",
+    "imageUrl": "",
     "description": ""
   },
   {
@@ -508,7 +508,7 @@
     "name": "آيس كريم بلاك بيري",
     "category": "ليموناده",
     "price": 4000,
-    "imageUrl": "/assets/images/1764877686454-IMG_2359.jpeg.jpg",
+    "imageUrl": "",
     "description": ""
   },
   {
@@ -1386,7 +1386,7 @@
   {
     "id": 1765228136518,
     "name": "كوكيز كريب",
-    "category": "ايس كوفي",
+    "category": "حلويات",
     "price": 6500,
     "imageUrl": "",
     "description": "كريب-بسكت كوكيز-كريمه الكوكيز-الشوكولاته البلجيكيه(سويت-وايت-دارك)"
@@ -1610,7 +1610,7 @@
   {
     "id": 1765230719307,
     "name": "اوريو ببلز",
-    "category": "ايس كوفي",
+    "category": "حلويات",
     "price": 6500,
     "imageUrl": "",
     "description": "عجينة الببلز مغتطسة بشكولاتة البلجيكية الفاخرة _ ايس كريم فانيلا _ بسكت اوريو"
@@ -1970,7 +1970,7 @@
   {
     "id": 1765232209717,
     "name": "ام الكاسه",
-    "category": "ايس كوفي",
+    "category": "ايس كريم",
     "price": 3000,
     "imageUrl": "",
     "description": "وسط"
@@ -1978,7 +1978,7 @@
   {
     "id": 1765232220175,
     "name": "ام الكاسه",
-    "category": "ايس كوفي",
+    "category": "ايس كريم",
     "price": 4000,
     "imageUrl": "",
     "description": "كبير"
