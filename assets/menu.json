@@ -1990,5 +1990,21 @@
     "price": 5000,
     "imageUrl": "/assets/images/1765235707637-a665a1d0-82b2-411a-97fe-4d0126d353a5.jpeg.jpg",
     "description": ""
+  },
+  {
+    "id": 1765236042662,
+    "name": "قالب صغير",
+    "category": "قوالب الكيك",
+    "price": 7000,
+    "imageUrl": "",
+    "description": ""
+  },
+  {
+    "id": 1765236054560,
+    "name": "قالب كبير",
+    "category": "قوالب الكيك",
+    "price": 15000,
+    "imageUrl": "",
+    "description": ""
   }
 ]
