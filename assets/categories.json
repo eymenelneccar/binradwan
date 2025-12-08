@@ -130,5 +130,11 @@
     "imageUrl": "/assets/images/1764883759686-IMG_2273.jpeg.jpg",
     "span": 1,
     "height": 48
+  },
+  {
+    "name": "حلويات",
+    "imageUrl": "",
+    "span": 1,
+    "height": 48
   }
 ]
