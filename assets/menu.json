@@ -1340,15 +1340,15 @@
     "name": "سبشل فادج كريب",
     "category": "حلويات",
     "price": 6000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1765638139637-24283941-fb15-4217-ac8e-71a9f228657f.jpeg.jpg",
     "description": "مريب-فادج كيك-كريمه-فواكه ثلاث انواع -الشوكولاه البلجيكيه (سويت وايت)"
   },
   {
     "id": 1765227742804,
-    "name": "فادج كيك",
+    "name": "فادج كريب",
     "category": "حلويات",
     "price": 6000,
-    "imageUrl": "/assets/images/1765390624232-3b047aad-5fd9-4c65-9408-223131e65f2d.jpeg.jpg",
+    "imageUrl": "/assets/images/1765638367756-64daee37-0e1e-47a9-8fac-521ea63d4893.jpeg.jpg",
     "description": "كريب-فادج كيك-الشوكولاه البلجيكيه(سويت وايت)"
   },
   {
@@ -1380,7 +1380,7 @@
     "name": "كوكيز كريب",
     "category": "حلويات",
     "price": 6500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1765638878223-d6d2b18f-c91d-4313-88db-feb7c2221ffc.jpeg.jpg",
     "description": "كريب-بسكت كوكيز-كريمه الكوكيز-الشوكولاته البلجيكيه(سويت-وايت-دارك)"
   },
   {
@@ -1436,7 +1436,7 @@
     "name": "سوشي موز",
     "category": "حلويات",
     "price": 6000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1765638906208-d310b486-46ca-46af-a997-4c2a67dd01e4.jpeg.jpg",
     "description": "كريب-موز—كريمه -الشوكولاته البلجيكيه(سويت وايت)"
   },
   {
@@ -1444,7 +1444,7 @@
     "name": "سوشي فادج كيك",
     "category": "حلويات",
     "price": 6000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1765638938134-b376d9d8-4614-447b-bae2-ecc7b011d6cd.jpeg.jpg",
     "description": "كريب- فادج كيك-كريمه-شوكولاته بلجيكيه(سويت -دارك )"
   },
   {
@@ -1468,7 +1468,7 @@
     "name": "رول بستاشيو",
     "category": "حلويات",
     "price": 6000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1765639166167-8c91cdb2-1bcc-4f93-986a-f7f8db6d8bfb.jpeg.jpg",
     "description": "كريب-ايس كريم فانيلا-فستق مشرح- زبده الفستق-الشوكولاته البيضاء"
   },
   {
@@ -1476,7 +1476,7 @@
     "name": "رول سبشل فادج",
     "category": "حلويات",
     "price": 6000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1765639328667-23f7d7d8-357d-4194-9ad8-b458cdfc024b.jpeg.jpg",
     "description": "كريب -فواكه-فادج كيك-كريم تشيز-رقائق الذره المحمصه -شوكلاته باجيكيه (سويت -وايت)"
   },
   {
@@ -1484,7 +1484,7 @@
     "name": "رول بنانا",
     "category": "حلويات",
     "price": 5500,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1765639405138-97bce090-6573-4347-9eab-d363aa392dc7.jpeg.jpg",
     "description": "كريب-موز-كريمه تشيز -الشوكولاته البلجيكيه(سويت-وايت)"
   },
   {
@@ -1492,7 +1492,7 @@
     "name": "رول لوتس",
     "category": "حلويات",
     "price": 6000,
-    "imageUrl": "",
+    "imageUrl": "/assets/images/1765639520804-88f9e8f4-06c9-4689-8433-18e3d79f6cbd.jpeg.jpg",
     "description": "كريب-ايس كريم فانيلا-بسكت اللوتس(زبده اللوتس-شوكلاته بيضاء)"
   },
   {
@@ -1572,7 +1572,7 @@
     "name": "لوتس ببلز",
     "category": "حلويات",
     "price": 6500,
-    "imageUrl": "/assets/images/1765392788421-498b604d-7fac-461d-909a-b02e2a74d68a.jpeg.jpg",
+    "imageUrl": "/assets/images/1765639610772-15f9febb-067d-4ade-804e-12dfc81cd4f0.jpeg.jpg",
     "description": "عجينة الببلز مغطسة بزبدة اللوتس _ ايس كريم فانيلا _ بسكت لوتس"
   },
   {
@@ -1580,7 +1580,7 @@
     "name": "اوريو ببلز",
     "category": "حلويات",
     "price": 6500,
-    "imageUrl": "/assets/images/1765392848939-7a8e6f59-89f5-4651-a25b-1ab348a39bc0.jpeg.jpg",
+    "imageUrl": "/assets/images/1765639660031-3a1a8302-86f4-4a61-a84a-1a0efe439513.jpeg.jpg",
     "description": "عجينة الببلز مغتطسة بشكولاتة البلجيكية الفاخرة _ ايس كريم فانيلا _ بسكت اوريو"
   },
   {
@@ -1588,7 +1588,7 @@
     "name": "فروتس ببلز",
     "category": "حلويات",
     "price": 6500,
-    "imageUrl": "/assets/images/1765392887251-7f19b969-1adc-4c75-8ec6-e8b6182713b4.jpeg.jpg",
+    "imageUrl": "/assets/images/1765639723862-76a672ae-f923-4d9b-ae22-368cee76c602.jpeg.jpg",
     "description": "عجينة الببلز مغتطسة بالشوكلاتة البلجيكية المميزة والفواكه"
   },
   {
